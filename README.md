@@ -1,7 +1,7 @@
 # ogparser4j
 
 ## Open Graph Protocol Summary
-1. It is located in the <meta> tags in the <head> HTML.
+1. It is located in the `<meta>` tags in the `<head>` of HTML.
 2. It has two attributes. `property` and `content`.
     - The value of `property`, which is referred to as `metadata`, must start with `og:`.
     ```
