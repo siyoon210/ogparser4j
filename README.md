@@ -56,3 +56,13 @@
 ### Reference
 - https://ogp.me/
 
+## Object Structure
+    ```
+    <meta property="og:image" content="rock.jpg" />
+    <meta property="og:image:width" content="300" />
+    <meta property="og:image:height" content="300" />
+    <meta property="og:image" content="rock2.jpg" />
+    <meta property="og:image:height" content="350" />
+    ```
+
+    ![object-diagram-0.1](./docs/diagram/object-diagram-0.1.png)
