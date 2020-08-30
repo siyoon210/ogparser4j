@@ -66,3 +66,6 @@
 ```
 
 ![object-diagram-0.1](./docs/diagram/object-diagram-0.1.png)
+
+## Class Diagram
+![class-diagram-0.1](./docs/diagram/class-diagram-0.1.png)
