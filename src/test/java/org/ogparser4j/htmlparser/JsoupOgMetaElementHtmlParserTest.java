@@ -25,5 +25,10 @@ class JsoupOgMetaElementHtmlParserTest {
         assertThat(ogMetaElements.contains(new OgMetaElement("title", "Open Graph protocol"))).isTrue();
         assertThat(ogMetaElements.contains(new OgMetaElement("type", "website"))).isTrue();
         assertThat(ogMetaElements.contains(new OgMetaElement("url", "https://ogp.me/"))).isTrue();
+        assertThat(ogMetaElements.contains(new OgMetaElement("image", "https://ogp.me/logo.png"))).isTrue();
+        assertThat(ogMetaElements.contains(new OgMetaElement("image:type", "image/png"))).isTrue();
+        assertThat(ogMetaElements.contains(new OgMetaElement("image:width", "300"))).isTrue();
+        assertThat(ogMetaElements.contains(new OgMetaElement("image:height", "300"))).isTrue();
+        assertThat(ogMetaElements.contains(new OgMetaElement("image:alt", "The Open Graph logo"))).isTrue();
     }
 }
