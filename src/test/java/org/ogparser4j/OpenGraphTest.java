@@ -34,6 +34,9 @@ class OpenGraphTest {
 
     @Test
     public void getSpecificContentTest() {
+        OpenGraph.Content title = openGraph.getContent("title");
 
+        assertThat(title).isNotNull();
+        assertThat(title.getValue()).isEqualTo("Open Graph protocol");
     }
 }
