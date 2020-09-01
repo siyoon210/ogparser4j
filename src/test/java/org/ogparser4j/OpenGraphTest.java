@@ -39,4 +39,16 @@ class OpenGraphTest {
         assertThat(title).isNotNull();
         assertThat(title.getValue()).isEqualTo("Open Graph protocol");
     }
+
+    @Test
+    public void getAllExtraDatumTest() {
+        OpenGraph.Content image = openGraph.getContent("image");
+        Set<String> extraDatum = image.getAllExtraDatum();
+
+        assertThat(extraDatum).isNotNull();
+        assertThat(extraDatum.contains("type")).isTrue();
+        assertThat(extraDatum.contains("width")).isTrue();
+        assertThat(extraDatum.contains("height")).isTrue();
+        assertThat(extraDatum.contains("alt")).isTrue();
+    }
 }
