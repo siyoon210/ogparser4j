@@ -61,6 +61,13 @@ class OpenGraphTest {
     }
 
     @Test
+    public void getContentSizeTest() {
+        int imageSize = openGraph.getContentSize("image");
+
+        assertThat(imageSize).isEqualTo(2);
+    }
+
+    @Test
     public void getAllExtraDatumTest() {
         OpenGraph.Content image = openGraph.getContent("image");
         Set<String> extraDatum = image.getAllExtraDatum();

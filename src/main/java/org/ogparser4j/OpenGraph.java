@@ -32,6 +32,10 @@ public class OpenGraph {
         return openGraph.get(property).get(index);
     }
 
+    public int getContentSize(String property) {
+        return openGraph.get(property).size();
+    }
+
     public static class Content {
         private final String value;
         private final Map<String, String> extraDatum;
