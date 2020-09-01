@@ -49,7 +49,7 @@ public class OpenGraph {
             return extraDatum.keySet();
         }
 
-        public String getExtraDataContent(String extraData) {
+        public String getExtraDataValue(String extraData) {
             return extraDatum.get(extraData);
         }
 

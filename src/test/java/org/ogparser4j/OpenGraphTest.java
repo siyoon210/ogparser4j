@@ -76,7 +76,7 @@ class OpenGraphTest {
     public void getSpecificExtraDataValueTest() {
         String imageType = openGraph
                 .getContent("image")
-                .getExtraDataContent("type");
+                .getExtraDataValue("type");
 
         assertThat(imageType).isEqualTo("image/png");
     }
