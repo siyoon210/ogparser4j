@@ -1,6 +1,5 @@
 package org.ogparser4j;
 
-import java.sql.PreparedStatement;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -43,6 +42,10 @@ public class OpenGraph {
 
         public Set<String> getAllExtraDatum() {
             return extraDatum.keySet();
+        }
+
+        public String getExtraDataContent(String extraData) {
+            return extraDatum.get(extraData);
         }
     }
 }

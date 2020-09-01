@@ -3,7 +3,6 @@ package org.ogparser4j;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.List;
 import java.util.Set;
 
 import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
@@ -50,5 +49,14 @@ class OpenGraphTest {
         assertThat(extraDatum.contains("width")).isTrue();
         assertThat(extraDatum.contains("height")).isTrue();
         assertThat(extraDatum.contains("alt")).isTrue();
+    }
+
+    @Test
+    public void getSpecificExtraDataValueTest() {
+        String imageType = openGraph
+                .getContent("image")
+                .getExtraDataContent("type");
+
+        assertThat(imageType).isEqualTo("image/png");
     }
 }
