@@ -1,22 +1,23 @@
 package org.ogparser4j;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class OpenGraph {
-    private final Map<String, Content> openGraph = new HashMap<>();
+    private final Map<String, List<Content>> openGraph = new HashMap<>();
 
     public OpenGraph() {
-        openGraph.put("title", new Content("Open Graph protocol"));
-        openGraph.put("type", new Content("website"));
-        openGraph.put("url", new Content("https://ogp.me/"));
-        final Content imageContent = new Content("https://ogp.me/logo.png");
-        imageContent.extraDatum.put("type", "image/png");
-        imageContent.extraDatum.put("width", "300");
-        imageContent.extraDatum.put("height", "300");
-        imageContent.extraDatum.put("alt", "The Open Graph logo");
-        openGraph.put("image", imageContent);
+        openGraph.put("title", Arrays.asList(new Content("Open Graph protocol")));
+        openGraph.put("type", Arrays.asList(new Content("website")));
+        openGraph.put("url", Arrays.asList(new Content("https://ogp.me/")));
+        final Content imageContent1 = new Content("https://ogp.me/logo.png");
+        imageContent1.extraDatum.put("type", "image/png");
+        imageContent1.extraDatum.put("width", "300");
+        imageContent1.extraDatum.put("height", "300");
+        imageContent1.extraDatum.put("alt", "The Open Graph logo");
+        final Content imageContent2 = new Content("https://ogp.me/logo2.png");
+        imageContent2.extraDatum.put("type", "image/gif");
+        imageContent2.extraDatum.put("width", "100");
+        openGraph.put("image", Arrays.asList(imageContent1, imageContent2));
     }
 
     public Set<String> getAllProperties() {
@@ -24,7 +25,11 @@ public class OpenGraph {
     }
 
     public Content getContent(String property) {
-        return openGraph.get(property);
+        return getContent(property, 0);
+    }
+
+    public Content getContent(String property, int index) {
+        return openGraph.get(property).get(index);
     }
 
     public static class Content {
@@ -46,6 +51,24 @@ public class OpenGraph {
 
         public String getExtraDataContent(String extraData) {
             return extraDatum.get(extraData);
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (!(o instanceof Content)) return false;
+
+            Content content = (Content) o;
+
+            if (!getValue().equals(content.getValue())) return false;
+            return extraDatum.equals(content.extraDatum);
+        }
+
+        @Override
+        public int hashCode() {
+            int result = getValue().hashCode();
+            result = 31 * result + extraDatum.hashCode();
+            return result;
         }
     }
 }

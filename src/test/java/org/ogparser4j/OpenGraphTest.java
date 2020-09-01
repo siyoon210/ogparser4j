@@ -40,6 +40,27 @@ class OpenGraphTest {
     }
 
     @Test
+    public void getSpecificIndexContentTest() {
+        //when
+        OpenGraph.Content imageIndex0 = openGraph.getContent("image", 0);
+        OpenGraph.Content imageIndex1 = openGraph.getContent("image", 1);
+
+        //then
+        assertThat(imageIndex0.getValue()).isEqualTo("https://ogp.me/logo.png");
+        assertThat(imageIndex1.getValue()).isEqualTo("https://ogp.me/logo2.png");
+    }
+
+    @Test
+    public void getSpecificContent_defaultIndexIsZero() {
+        //when
+        OpenGraph.Content image = openGraph.getContent("image");
+        OpenGraph.Content imageIndex0 = openGraph.getContent("image", 0);
+
+        //then
+        assertThat(image).isEqualTo(imageIndex0);
+    }
+
+    @Test
     public void getAllExtraDatumTest() {
         OpenGraph.Content image = openGraph.getContent("image");
         Set<String> extraDatum = image.getAllExtraDatum();
