@@ -24,9 +24,6 @@ String titleValue = title.getValue(); // "Open Graph protocol"
 ```
 <meta property="og:image" content="https://ogp.me/logo.png" />
 <meta property="og:image:type" content="image/png" />
-<meta property="og:image:width" content="300" />
-<meta property="og:image:height" content="300" />
-<meta property="og:image:alt" content="The Open Graph logo" />
 ```
 
 - usage
@@ -55,10 +52,8 @@ String image1 = imageIndex1.getValue(); // "https://ogp.me/logo2.png"
 ```
 <meta property="og:image" content="https://ogp.me/logo.png" />
 <meta property="og:image:width" content="300" />
-<meta property="og:image:height" content="300" />
 <meta property="og:image" content="https://ogp.me/logo2.png" />
 <meta property="og:image:width" content="200" />
-<meta property="og:image:height" content="200" />
 ```
 
 - usage(2)
