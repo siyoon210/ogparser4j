@@ -66,7 +66,7 @@ String image1Wdith = imageIndex1.getExtraDataValue("width); // "200"
 ```
 
 ## OpenGraph Protocol Summary
-![OpenGraph Protocol Summary](./docs/OpenGraph-Protocol-Summary.md)
+[OpenGraph Protocol Summary](./docs/OpenGraph-Protocol-Summary.md)
 
 ## Class Diagram
 ![class-diagram-0.1](./docs/diagram/class-diagram-0.1.png)
