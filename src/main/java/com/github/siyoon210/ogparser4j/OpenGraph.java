@@ -1,4 +1,4 @@
-package org.ogparser4j;
+package com.github.siyoon210.ogparser4j;
 
 import java.util.HashMap;
 import java.util.List;
