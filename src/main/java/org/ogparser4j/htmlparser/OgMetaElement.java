@@ -1,11 +1,21 @@
 package org.ogparser4j.htmlparser;
 
 public class OgMetaElement {
+    private static final String EXTRA_DATA_SEPARATOR = ":";
     private final String property;
     private final String content;
+    private final String extraData;
 
     public OgMetaElement(String property, String content) {
-        this.property = property;
+        if (isExtraData(property)) {
+            final String[] split = property.split(EXTRA_DATA_SEPARATOR);
+            this.property = split[0];
+            this.extraData = split[1];
+        } else {
+            this.property = property;
+            this.extraData = null;
+        }
+
         this.content = content;
     }
 
@@ -15,6 +25,18 @@ public class OgMetaElement {
 
     public String getContent() {
         return content;
+    }
+
+    public String getExtraData() {
+        return extraData;
+    }
+
+    public boolean hasExtraData() {
+        return extraData != null;
+    }
+
+    private boolean isExtraData(String property) {
+        return property.contains(EXTRA_DATA_SEPARATOR);
     }
 
     @Override
