@@ -1,23 +1,15 @@
 package org.ogparser4j;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public class OpenGraph {
-    private final Map<String, List<Content>> openGraph = new HashMap<>();
+    private final Map<String, List<Content>> openGraph;
 
-    public OpenGraph() {
-        openGraph.put("title", Arrays.asList(new Content("Open Graph protocol")));
-        openGraph.put("type", Arrays.asList(new Content("website")));
-        openGraph.put("url", Arrays.asList(new Content("https://ogp.me/")));
-        final Content imageContent1 = new Content("https://ogp.me/logo.png");
-        imageContent1.extraDatum.put("type", "image/png");
-        imageContent1.extraDatum.put("width", "300");
-        imageContent1.extraDatum.put("height", "300");
-        imageContent1.extraDatum.put("alt", "The Open Graph logo");
-        final Content imageContent2 = new Content("https://ogp.me/logo2.png");
-        imageContent2.extraDatum.put("type", "image/gif");
-        imageContent2.extraDatum.put("width", "100");
-        openGraph.put("image", Arrays.asList(imageContent1, imageContent2));
+    public OpenGraph(Map<String, List<Content>> openGraphMap) {
+        this.openGraph = openGraphMap;
     }
 
     public Set<String> getAllProperties() {
@@ -55,6 +47,10 @@ public class OpenGraph {
 
         public String getExtraDataValue(String extraData) {
             return extraDatum.get(extraData);
+        }
+
+        void setExtraData(String extraData, String value) {
+            extraDatum.put(extraData, value);
         }
 
         @Override
