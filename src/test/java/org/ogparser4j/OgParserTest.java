@@ -24,6 +24,6 @@ class OgParserTest {
         assertThat(allProperties.contains("title")).isTrue();
         assertThat(allProperties.contains("type")).isTrue();
         assertThat(allProperties.contains("url")).isTrue();
-        assertThat(allProperties.contains("imgae")).isTrue();
+        assertThat(allProperties.contains("image")).isTrue();
     }
 }
