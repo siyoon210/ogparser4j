@@ -48,6 +48,8 @@ String image0 = imageIndex0.getValue(); // "https://ogp.me/logo.png"
 String image1 = imageIndex1.getValue(); // "https://ogp.me/logo2.png"
 ```
 
+---
+
 - sample meta elements(2)
 ```
 <meta property="og:image" content="https://ogp.me/logo.png" />
