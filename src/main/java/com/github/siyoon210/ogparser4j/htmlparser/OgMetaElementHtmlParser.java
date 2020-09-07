@@ -1,4 +1,4 @@
-package org.ogparser4j.htmlparser;
+package com.github.siyoon210.ogparser4j.htmlparser;
 
 import java.util.List;
 

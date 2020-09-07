@@ -1,4 +1,4 @@
-package org.ogparser4j.htmlparser;
+package com.github.siyoon210.ogparser4j.htmlparser;
 
 public class OgMetaElement {
     private static final String EXTRA_DATA_SEPARATOR = ":";

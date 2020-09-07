@@ -1,4 +1,4 @@
-package org.ogparser4j.htmlparser;
+package com.github.siyoon210.ogparser4j.htmlparser;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
