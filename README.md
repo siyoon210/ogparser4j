@@ -28,7 +28,7 @@ String titleValue = title.getValue(); // "Open Graph protocol"
 
 - usage
 ```
-OpenGraph.Content image = openGraph.getContent("image");
+OpenGraph.Content image = openGraph.getContentOf("image");
 String imageType = image.getExtraDataValueOf("type"); // "image/png"
 ```
 
@@ -41,8 +41,8 @@ String imageType = image.getExtraDataValueOf("type"); // "image/png"
 
 - usage(1)
 ```
-OpenGraph.Content imageIndex0 = openGraph.getContent("image", 0); // you can omit index 0.
-OpenGraph.Content imageIndex1 = openGraph.getContent("image", 1);
+OpenGraph.Content imageIndex0 = openGraph.getContentOf("image", 0); // you can omit index 0.
+OpenGraph.Content imageIndex1 = openGraph.getContentOf("image", 1);
 
 String image0 = imageIndex0.getValue(); // "https://ogp.me/logo.png"
 String image1 = imageIndex1.getValue(); // "https://ogp.me/logo2.png"
