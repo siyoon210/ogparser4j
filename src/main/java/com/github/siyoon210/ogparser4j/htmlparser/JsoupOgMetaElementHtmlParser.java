@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 
 public class JsoupOgMetaElementHtmlParser implements OgMetaElementHtmlParser {
     @Override
-    public List<OgMetaElement> getOgMetaElements(String url) {
+    public List<OgMetaElement> getOgMetaElementsFrom(String url) {
         try {
             final Document document = Jsoup.connect(url).get();
             final Elements metaElements = document.select("meta");

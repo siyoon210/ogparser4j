@@ -18,7 +18,7 @@ class JsoupOgMetaElementHtmlParserTest {
 
     @Test
     public void jsoupParserTest() {
-        final List<OgMetaElement> ogMetaElements = jsoupOgMetaElementHtmlParser.getOgMetaElements(SAMPLE_URL);
+        final List<OgMetaElement> ogMetaElements = jsoupOgMetaElementHtmlParser.getOgMetaElementsFrom(SAMPLE_URL);
         for (OgMetaElement ogMetaElement : ogMetaElements) {
             System.out.println(ogMetaElement.toString());
         }

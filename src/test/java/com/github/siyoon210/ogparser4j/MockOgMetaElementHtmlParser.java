@@ -8,7 +8,7 @@ import java.util.List;
 
 public class MockOgMetaElementHtmlParser implements OgMetaElementHtmlParser {
     @Override
-    public List<OgMetaElement> getOgMetaElements(String url) {
+    public List<OgMetaElement> getOgMetaElementsFrom(String url) {
         return Arrays.asList(
                 new OgMetaElement("title", "Open Graph protocol"),
                 new OgMetaElement("type", "website"),
