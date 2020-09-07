@@ -8,7 +8,7 @@ import java.util.Set;
 public class OpenGraph {
     private final Map<String, List<Content>> openGraph;
 
-    public OpenGraph(Map<String, List<Content>> openGraphMap) {
+    OpenGraph(Map<String, List<Content>> openGraphMap) {
         this.openGraph = openGraphMap;
     }
 
@@ -32,7 +32,7 @@ public class OpenGraph {
         private final String value;
         private final Map<String, String> extraDatum;
 
-        public Content(String value) {
+        Content(String value) {
             this.value = value;
             extraDatum = new HashMap<>();
         }
