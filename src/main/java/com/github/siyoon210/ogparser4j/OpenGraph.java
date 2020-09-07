@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class OpenGraph {
     private final Map<String, List<Content>> openGraph;
@@ -26,6 +27,31 @@ public class OpenGraph {
 
     public int getContentSize(String property) {
         return openGraph.get(property).size();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof OpenGraph)) return false;
+
+        OpenGraph openGraph1 = (OpenGraph) o;
+
+        return openGraph.equals(openGraph1.openGraph);
+    }
+
+    @Override
+    public int hashCode() {
+        return openGraph.hashCode();
+    }
+
+    @Override
+    public String toString() {
+        return "OpenGraph " +
+                openGraph.keySet().stream()
+                .map(p -> p + "=" + openGraph.get(p).stream()
+                        .map(Object::toString)
+                        .collect(Collectors.joining("-", "{", "}")))
+                .collect(Collectors.joining(", ", "{", "}"));
     }
 
     public static class Content {
@@ -69,6 +95,14 @@ public class OpenGraph {
             int result = getValue().hashCode();
             result = 31 * result + extraDatum.hashCode();
             return result;
+        }
+
+        @Override
+        public String toString() {
+            return "Content{" +
+                    "value='" + value + '\'' +
+                    ", extraDatum=" + extraDatum +
+                    '}';
         }
     }
 }
