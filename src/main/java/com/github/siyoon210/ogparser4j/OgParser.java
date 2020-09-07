@@ -20,7 +20,7 @@ public class OgParser {
         this.ogMetaElementHtmlParser = ogMetaElementHtmlParser;
     }
 
-    public OpenGraph getOpenGraph(String url) {
+    public OpenGraph getOpenGraphOf(String url) {
         final List<OgMetaElement> ogMetaElements = ogMetaElementHtmlParser.getOgMetaElements(url);
 
         final Map<String, List<OpenGraph.Content>> openGraphMap = convertOgMetaElementsToOpenGraphMap(ogMetaElements);

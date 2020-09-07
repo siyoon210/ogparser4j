@@ -13,7 +13,7 @@ class OpenGraphTest {
     @BeforeEach
     public void init() {
         OgParser ogParser = new OgParser(new MockOgMetaElementHtmlParser());
-        openGraph = ogParser.getOpenGraph("URL");
+        openGraph = ogParser.getOpenGraphOf("URL");
     }
 
     @Test
