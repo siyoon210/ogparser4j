@@ -17,15 +17,15 @@ public class OpenGraph {
         return openGraph.keySet();
     }
 
-    public Content getContent(String property) {
-        return getContent(property, 0);
+    public Content getContentOf(String property) {
+        return getContentOf(property, 0);
     }
 
-    public Content getContent(String property, int index) {
+    public Content getContentOf(String property, int index) {
         return openGraph.get(property).get(index);
     }
 
-    public int getContentSize(String property) {
+    public int getContentSizeOf(String property) {
         return openGraph.get(property).size();
     }
 
@@ -71,7 +71,7 @@ public class OpenGraph {
             return extraDatum.keySet();
         }
 
-        public String getExtraDataValue(String extraData) {
+        public String getExtraDataValueOf(String extraData) {
             return extraDatum.get(extraData);
         }
 

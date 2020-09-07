@@ -34,7 +34,7 @@ class OpenGraphTest {
 
     @Test
     public void getSpecificContentTest() {
-        OpenGraph.Content title = openGraph.getContent("title");
+        OpenGraph.Content title = openGraph.getContentOf("title");
 
         assertThat(title).isNotNull();
         assertThat(title.getValue()).isEqualTo("Open Graph protocol");
@@ -43,8 +43,8 @@ class OpenGraphTest {
     @Test
     public void getSpecificIndexContentTest() {
         //when
-        OpenGraph.Content imageIndex0 = openGraph.getContent("image", 0);
-        OpenGraph.Content imageIndex1 = openGraph.getContent("image", 1);
+        OpenGraph.Content imageIndex0 = openGraph.getContentOf("image", 0);
+        OpenGraph.Content imageIndex1 = openGraph.getContentOf("image", 1);
 
         //then
         assertThat(imageIndex0.getValue()).isEqualTo("https://ogp.me/logo.png");
@@ -54,8 +54,8 @@ class OpenGraphTest {
     @Test
     public void getSpecificContent_defaultIndexIsZero() {
         //when
-        OpenGraph.Content image = openGraph.getContent("image");
-        OpenGraph.Content imageIndex0 = openGraph.getContent("image", 0);
+        OpenGraph.Content image = openGraph.getContentOf("image");
+        OpenGraph.Content imageIndex0 = openGraph.getContentOf("image", 0);
 
         //then
         assertThat(image).isEqualTo(imageIndex0);
@@ -63,14 +63,14 @@ class OpenGraphTest {
 
     @Test
     public void getContentSizeTest() {
-        int imageSize = openGraph.getContentSize("image");
+        int imageSize = openGraph.getContentSizeOf("image");
 
         assertThat(imageSize).isEqualTo(2);
     }
 
     @Test
     public void getAllExtraDatumTest() {
-        OpenGraph.Content image = openGraph.getContent("image");
+        OpenGraph.Content image = openGraph.getContentOf("image");
         Set<String> extraDatum = image.getAllExtraDatum();
 
         assertThat(extraDatum).isNotNull();
@@ -83,8 +83,8 @@ class OpenGraphTest {
     @Test
     public void getSpecificExtraDataValueTest() {
         String imageType = openGraph
-                .getContent("image")
-                .getExtraDataValue("type");
+                .getContentOf("image")
+                .getExtraDataValueOf("type");
 
         assertThat(imageType).isEqualTo("image/png");
     }
