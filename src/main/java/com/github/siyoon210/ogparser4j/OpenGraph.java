@@ -7,14 +7,14 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 public class OpenGraph {
-    private final Map<String, List<Content>> openGraph;
+    private final Map<String, List<Content>> openGraphMap;
 
     OpenGraph(Map<String, List<Content>> openGraphMap) {
-        this.openGraph = openGraphMap;
+        this.openGraphMap = openGraphMap;
     }
 
     public Set<String> getAllProperties() {
-        return openGraph.keySet();
+        return openGraphMap.keySet();
     }
 
     public Content getContentOf(String property) {
@@ -22,11 +22,11 @@ public class OpenGraph {
     }
 
     public Content getContentOf(String property, int index) {
-        return openGraph.get(property).get(index);
+        return openGraphMap.get(property).get(index);
     }
 
     public int getContentSizeOf(String property) {
-        return openGraph.get(property).size();
+        return openGraphMap.get(property).size();
     }
 
     @Override
@@ -36,19 +36,19 @@ public class OpenGraph {
 
         OpenGraph openGraph1 = (OpenGraph) o;
 
-        return openGraph.equals(openGraph1.openGraph);
+        return openGraphMap.equals(openGraph1.openGraphMap);
     }
 
     @Override
     public int hashCode() {
-        return openGraph.hashCode();
+        return openGraphMap.hashCode();
     }
 
     @Override
     public String toString() {
         return "OpenGraph " +
-                openGraph.keySet().stream()
-                .map(p -> p + "=" + openGraph.get(p).stream()
+                openGraphMap.keySet().stream()
+                .map(p -> p + "=" + openGraphMap.get(p).stream()
                         .map(Object::toString)
                         .collect(Collectors.joining("-", "{", "}")))
                 .collect(Collectors.joining(", ", "{", "}"));
