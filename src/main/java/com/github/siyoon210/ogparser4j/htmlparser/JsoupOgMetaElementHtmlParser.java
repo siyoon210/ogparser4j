@@ -7,9 +7,12 @@ import org.jsoup.select.Elements;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 public class JsoupOgMetaElementHtmlParser implements OgMetaElementHtmlParser {
+    private static final Logger log = Logger.getGlobal();
+
     @Override
     public List<OgMetaElement> getOgMetaElementsFrom(String url) {
         try {
@@ -24,7 +27,7 @@ public class JsoupOgMetaElementHtmlParser implements OgMetaElementHtmlParser {
                     })
                     .collect(Collectors.toList());
         } catch (IOException e) {
-            e.printStackTrace();
+            log.info("IOException occurred while parsing html meta elements.");
             return Collections.emptyList();
         }
     }
