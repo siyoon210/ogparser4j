@@ -76,9 +76,6 @@ def pomConfig = {
         developerConnection "scm:git:ssh://github.com:siyoon210/ogparser4j.git"
         url "https://github.com/siyoon210/ogparser4j"
     }
-    distributionManagement {
-
-    }
 }
 
 publishing {
