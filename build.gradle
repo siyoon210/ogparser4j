@@ -1,22 +1,103 @@
 plugins {
     id 'java'
+    id 'maven-publish'
+    id 'com.jfrog.bintray' version '1.8.5'
 }
-
-group 'OpenGraph Parser'
-version '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
+    jcenter()
 }
+
+group 'com.github.siyoon210'
+version '1.0.1'
 
 dependencies {
     implementation(group: 'org.jsoup', name: 'jsoup', version: '1.13.1')
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.6.2")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.6.2")
-    testImplementation group: 'org.assertj', name: 'assertj-core', version: '3.6.1'
-    testImplementation group: 'org.mockito', name: 'mockito-core', version: '3.5.10'
+    testImplementation (group: 'org.assertj', name: 'assertj-core', version: '3.6.1')
 }
 
 test {
     useJUnitPlatform()
+}
+
+bintray {
+    user = project.bintray_user
+    key = project.bintray_key
+    publications = ['MyPublication']
+
+    pkg {
+        repo = 'util'
+        name = 'ogparser4j'
+        userOrg = 'siyoon210'
+        licenses = ['MIT']
+        vcsUrl = 'https://github.com/siyoon210/ogparser4j.git'
+        version {
+            name = '1.0.1'
+//        desc = 'Version description'
+            released  = new Date()
+            vcsTag = '1.0.1'
+        }
+    }
+}
+
+
+
+task sourcesJar(type: Jar) {
+    from sourceSets.main.allSource
+    classifier = 'sources'
+}
+
+task javadocJar(type: Jar, dependsOn: 'javadoc') {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+def pomConfig = {
+    licenses {
+        license {
+            name "MIT License"
+            url "http://www.opensource.org/licenses/mit-license.php"
+        }
+    }
+    developers {
+        developer {
+            id "siyoon"
+            name "siyoon jung"
+            email "siyoon210@gmail.com"
+            organization "Github"
+            organizationUrl "https://github.com"
+        }
+    }
+    scm {
+        connection "scm:git:git://github.com/siyoon210/ogparser4j.git"
+        developerConnection "scm:git:ssh://github.com:siyoon210/ogparser4j.git"
+        url "https://github.com/siyoon210/ogparser4j"
+    }
+    distributionManagement {
+
+    }
+}
+
+publishing {
+    publications {
+        MyPublication(MavenPublication) {
+            from components.java
+            artifact sourcesJar
+            artifact javadocJar
+            groupId 'com.github.siyoon210'
+            artifactId 'ogparser4j'
+            version '1.0.1'
+            pom.withXml {
+                def root = asNode()
+                root.appendNode('description', 'OpenGraph parser for Java')
+                root.appendNode('name', 'ogparser4j')
+                root.appendNode('url', 'https://github.com/siyoon210/ogparser4j')
+                root.appendNode('packaging', 'jar')
+                root.children().last() + pomConfig
+            }
+        }
+    }
 }

@@ -1,4 +1,4 @@
-package org.ogparser4j.htmlparser;
+package com.github.siyoon210.ogparser4j.htmlparser;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -18,7 +18,7 @@ class JsoupOgMetaElementHtmlParserTest {
 
     @Test
     public void jsoupParserTest() {
-        final List<OgMetaElement> ogMetaElements = jsoupOgMetaElementHtmlParser.getOgMetaElements(SAMPLE_URL);
+        final List<OgMetaElement> ogMetaElements = jsoupOgMetaElementHtmlParser.getOgMetaElementsFrom(SAMPLE_URL);
         for (OgMetaElement ogMetaElement : ogMetaElements) {
             System.out.println(ogMetaElement.toString());
         }

@@ -4,7 +4,7 @@
 ### How to Get OpenGraph object from your target url. 
 ```
 OgParser ogParser = new OgParser();
-OpenGraph openGraph = ogParser.getOpenGraph("https://target.url");
+OpenGraph openGraph = ogParser.getOpenGraphOf("https://target.url");
 ```
 
 ### How to Get OpenGraph Value
@@ -15,7 +15,7 @@ OpenGraph openGraph = ogParser.getOpenGraph("https://target.url");
 
 - usage
 ```
-OpenGraph.Content title = openGraph.getContent("title");
+OpenGraph.Content title = openGraph.getContentOf("title");
 String titleValue = title.getValue(); // "Open Graph protocol"
 ```
 
@@ -28,8 +28,8 @@ String titleValue = title.getValue(); // "Open Graph protocol"
 
 - usage
 ```
-OpenGraph.Content image = openGraph.getContent("image");
-String imageType = image.getExtraDataValue("type"); // "image/png"
+OpenGraph.Content image = openGraph.getContentOf("image");
+String imageType = image.getExtraDataValueOf("type"); // "image/png"
 ```
 
 ### How to Get Array Values
@@ -41,8 +41,8 @@ String imageType = image.getExtraDataValue("type"); // "image/png"
 
 - usage(1)
 ```
-OpenGraph.Content imageIndex0 = openGraph.getContent("image", 0); // you can omit index 0.
-OpenGraph.Content imageIndex1 = openGraph.getContent("image", 1);
+OpenGraph.Content imageIndex0 = openGraph.getContentOf("image", 0); // you can omit index 0.
+OpenGraph.Content imageIndex1 = openGraph.getContentOf("image", 1);
 
 String image0 = imageIndex0.getValue(); // "https://ogp.me/logo.png"
 String image1 = imageIndex1.getValue(); // "https://ogp.me/logo2.png"
@@ -60,11 +60,11 @@ String image1 = imageIndex1.getValue(); // "https://ogp.me/logo2.png"
 
 - usage(2)
 ```
-OpenGraph.Content imageIndex0 = openGraph.getContent("image", 0); // you can omit index 0.
-OpenGraph.Content imageIndex1 = openGraph.getContent("image", 1);
+OpenGraph.Content imageIndex0 = openGraph.getContentOf("image", 0); // you can omit index 0.
+OpenGraph.Content imageIndex1 = openGraph.getContentOf("image", 1);
 
-String image0Width = imageIndex0.getExtraDataValue("width"); // "300"
-String image1Wdith = imageIndex1.getExtraDataValue("width); // "200"
+String image0Width = imageIndex0.getExtraDataValueOf("width"); // "300"
+String image1Wdith = imageIndex1.getExtraDataValueOf("width); // "200"
 ```
 
 ## OpenGraph Protocol Summary

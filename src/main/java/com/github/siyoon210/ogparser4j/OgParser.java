@@ -1,8 +1,8 @@
-package org.ogparser4j;
+package com.github.siyoon210.ogparser4j;
 
-import org.ogparser4j.htmlparser.JsoupOgMetaElementHtmlParser;
-import org.ogparser4j.htmlparser.OgMetaElement;
-import org.ogparser4j.htmlparser.OgMetaElementHtmlParser;
+import com.github.siyoon210.ogparser4j.htmlparser.JsoupOgMetaElementHtmlParser;
+import com.github.siyoon210.ogparser4j.htmlparser.OgMetaElement;
+import com.github.siyoon210.ogparser4j.htmlparser.OgMetaElementHtmlParser;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -20,8 +20,8 @@ public class OgParser {
         this.ogMetaElementHtmlParser = ogMetaElementHtmlParser;
     }
 
-    public OpenGraph getOpenGraph(String url) {
-        final List<OgMetaElement> ogMetaElements = ogMetaElementHtmlParser.getOgMetaElements(url);
+    public OpenGraph getOpenGraphOf(String url) {
+        final List<OgMetaElement> ogMetaElements = ogMetaElementHtmlParser.getOgMetaElementsFrom(url);
 
         final Map<String, List<OpenGraph.Content>> openGraphMap = convertOgMetaElementsToOpenGraphMap(ogMetaElements);
 

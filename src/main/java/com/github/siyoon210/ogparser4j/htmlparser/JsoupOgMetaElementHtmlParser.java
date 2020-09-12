@@ -1,4 +1,4 @@
-package org.ogparser4j.htmlparser;
+package com.github.siyoon210.ogparser4j.htmlparser;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -7,11 +7,14 @@ import org.jsoup.select.Elements;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 public class JsoupOgMetaElementHtmlParser implements OgMetaElementHtmlParser {
+    private static final Logger log = Logger.getGlobal();
+
     @Override
-    public List<OgMetaElement> getOgMetaElements(String url) {
+    public List<OgMetaElement> getOgMetaElementsFrom(String url) {
         try {
             final Document document = Jsoup.connect(url).get();
             final Elements metaElements = document.select("meta");
@@ -24,7 +27,7 @@ public class JsoupOgMetaElementHtmlParser implements OgMetaElementHtmlParser {
                     })
                     .collect(Collectors.toList());
         } catch (IOException e) {
-            e.printStackTrace();
+            log.info("IOException occurred while parsing html meta elements.");
             return Collections.emptyList();
         }
     }
