@@ -33,4 +33,4 @@ gradle
 .DS_Store
 
 # properties
-application.properties
+*.properties
