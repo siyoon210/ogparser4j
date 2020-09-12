@@ -1,8 +1,10 @@
 # ogparser4j
 - This is OpenGraph parser for Java.
 ## Installation
+[Maven Central : ogparser4j](https://search.maven.org/search?q=a:ogparser4j)
+
 1. maven
-```
+```xml
 <dependency>
   <groupId>com.github.siyoon210</groupId>
   <artifactId>ogparser4j</artifactId>
@@ -11,11 +13,9 @@
 ```
 
 2. gradle
-```
+```groovy
 implementation 'com.github.siyoon210:ogparser4j:1.0.1'
 ```
-
-[Maven Cetral : ogparser4j](https://search.maven.org/search?q=a:ogparser4j)
 
 ## Usage
 ### How to Get OpenGraph object from your target url. 
