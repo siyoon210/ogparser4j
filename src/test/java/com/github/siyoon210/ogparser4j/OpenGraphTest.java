@@ -69,15 +69,15 @@ class OpenGraphTest {
     }
 
     @Test
-    public void getAllExtraDatumTest() {
+    public void getAllExtraDataTest() {
         OpenGraph.Content image = openGraph.getContentOf("image");
-        Set<String> extraDatum = image.getAllExtraDatum();
+        Set<String> extraData = image.getAllExtraData();
 
-        assertThat(extraDatum).isNotNull();
-        assertThat(extraDatum.contains("type")).isTrue();
-        assertThat(extraDatum.contains("width")).isTrue();
-        assertThat(extraDatum.contains("height")).isTrue();
-        assertThat(extraDatum.contains("alt")).isTrue();
+        assertThat(extraData).isNotNull();
+        assertThat(extraData.contains("type")).isTrue();
+        assertThat(extraData.contains("width")).isTrue();
+        assertThat(extraData.contains("height")).isTrue();
+        assertThat(extraData.contains("alt")).isTrue();
     }
 
     @Test

@@ -56,27 +56,27 @@ public class OpenGraph {
 
     public static class Content {
         private final String value;
-        private final Map<String, String> extraDatum;
+        private final Map<String, String> extraData;
 
         Content(String value) {
             this.value = value;
-            extraDatum = new HashMap<>();
+            extraData = new HashMap<>();
         }
 
         public String getValue() {
             return value;
         }
 
-        public Set<String> getAllExtraDatum() {
-            return extraDatum.keySet();
+        public Set<String> getAllExtraData() {
+            return extraData.keySet();
         }
 
         public String getExtraDataValueOf(String extraData) {
-            return extraDatum.get(extraData);
+            return this.extraData.get(extraData);
         }
 
         void setExtraData(String extraData, String value) {
-            extraDatum.put(extraData, value);
+            this.extraData.put(extraData, value);
         }
 
         @Override
@@ -87,13 +87,13 @@ public class OpenGraph {
             Content content = (Content) o;
 
             if (!getValue().equals(content.getValue())) return false;
-            return extraDatum.equals(content.extraDatum);
+            return extraData.equals(content.extraData);
         }
 
         @Override
         public int hashCode() {
             int result = getValue().hashCode();
-            result = 31 * result + extraDatum.hashCode();
+            result = 31 * result + extraData.hashCode();
             return result;
         }
 
@@ -101,7 +101,7 @@ public class OpenGraph {
         public String toString() {
             return "Content{" +
                     "value='" + value + '\'' +
-                    ", extraDatum=" + extraDatum +
+                    ", extraData=" + extraData +
                     '}';
         }
     }
