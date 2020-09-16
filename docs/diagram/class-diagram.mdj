@@ -1776,7 +1776,7 @@
 											"top": 479,
 											"width": 273.24755859375,
 											"height": 13,
-											"text": "+getAllExtraDatum(): Set<String>",
+											"text": "+getAllExtraData(): Set<String>",
 											"horizontalAlignment": 0
 										},
 										{
@@ -2194,7 +2194,8 @@
 									"_parent": {
 										"$ref": "AAAAAAF0P1X6ZOIO/GY="
 									},
-									"name": "String url"
+									"name": "String url",
+									"type": ""
 								},
 								{
 									"_type": "UMLParameter",
@@ -2282,7 +2283,8 @@
 									"_parent": {
 										"$ref": "AAAAAAF0YcGV5XKo3AI="
 									},
-									"name": "String property"
+									"name": "String property",
+									"type": ""
 								},
 								{
 									"_type": "UMLParameter",
@@ -2311,7 +2313,8 @@
 									"_parent": {
 										"$ref": "AAAAAAF0YcHovnLguHE="
 									},
-									"name": "String property"
+									"name": "String property",
+									"type": ""
 								},
 								{
 									"_type": "UMLParameter",
@@ -2319,7 +2322,8 @@
 									"_parent": {
 										"$ref": "AAAAAAF0YcHovnLguHE="
 									},
-									"name": "int index"
+									"name": "int index",
+									"type": ""
 								},
 								{
 									"_type": "UMLParameter",
@@ -2348,7 +2352,8 @@
 									"_parent": {
 										"$ref": "AAAAAAF0YcJDmHM5RRg="
 									},
-									"name": "String property"
+									"name": "String property",
+									"type": ""
 								},
 								{
 									"_type": "UMLParameter",
@@ -2414,7 +2419,8 @@
 									"_parent": {
 										"$ref": "AAAAAAF0P1hY/uOGxxc="
 									},
-									"name": "String url"
+									"name": "String url",
+									"type": ""
 								},
 								{
 									"_type": "UMLParameter",
@@ -2510,7 +2516,7 @@
 							"_parent": {
 								"$ref": "AAAAAAF0YcLVKnNoGlI="
 							},
-							"name": "getAllExtraDatum",
+							"name": "getAllExtraData",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -2537,7 +2543,8 @@
 									"_parent": {
 										"$ref": "AAAAAAF0YcO0C3QptmM="
 									},
-									"name": "String extraData"
+									"name": "String extraData",
+									"type": ""
 								},
 								{
 									"_type": "UMLParameter",
